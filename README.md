@@ -38,3 +38,6 @@ s3_dir = S3DirectoryLoader(
     )
 docs = s3_dir.load()
 ```
+
+## License
+MIT
