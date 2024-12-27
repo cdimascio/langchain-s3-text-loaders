@@ -1,4 +1,4 @@
-# langchain_s3_text_loaders
+# langchain-s3-text-loaders
 
 AWS S3 directory and file loaders for **text files**, for instance text, html, xml, json, etc.
 
