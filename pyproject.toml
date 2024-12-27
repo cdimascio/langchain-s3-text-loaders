@@ -1,6 +1,6 @@
 [project]
 name = "langchain-s3-text-loaders"
-version = "0.8.1"
+version = "0.8.2"
 description = "s3 loaders for simple text files"
 authors = [
     { name = "Carmine DiMascio", email = "cdimascio@gmail.com" }

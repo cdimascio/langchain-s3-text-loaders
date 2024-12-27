@@ -20,6 +20,7 @@ class S3TextFileDirectoryLoader(BaseLoader):
         self,
         bucket: str,
         prefix: str = "",
+        batch_size: int = 1,
         *,
         region_name: Optional[str] = None,
         api_version: Optional[str] = None,
@@ -35,6 +36,7 @@ class S3TextFileDirectoryLoader(BaseLoader):
 
         :param bucket: The name of the S3 bucket.
         :param prefix: The prefix of the S3 key. Defaults to "".
+        :param batch_size: The number of S3 files downloaded concurrently. Defaults to 1.
 
         :param region_name: The name of the region associated with the client.
             A client is associated with a single region.
@@ -97,7 +99,10 @@ class S3TextFileDirectoryLoader(BaseLoader):
         self.aws_secret_access_key = aws_secret_access_key
         self.aws_session_token = aws_session_token
         self.boto_config = boto_config
-        self.batch_size = 50
+        self.batch_size = batch_size
+
+        if self.batch_size <= 0:
+            raise Exception("batch_size must be greater than 0.")
 
     def load(self) -> List[Document]:
         """Load documents."""
@@ -127,7 +132,9 @@ class S3TextFileDirectoryLoader(BaseLoader):
         batches = [objects[i:i + self.batch_size] for i in range(0, len(objects), self.batch_size)]
 
         all_docs = []
-        with ThreadPoolExecutor(max_workers=10) as executor:  # Max workers limit the parallel threads
+        # TODO improve workers to something like Number of threads = CPUs × (1 + Wait Time / Compute Time)
+        max_workers = min(self.batch_size, 100)
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:  # Max workers limit the parallel threads
             for batch in batches:
                 docs = self._load_batch(batch, executor)
                 all_docs.extend(docs)
