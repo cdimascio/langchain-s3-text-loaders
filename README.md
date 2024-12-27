@@ -1,5 +1,7 @@
 # langchain_s3_text_loaders
 
+AWS S3 directory and file loaders for **text files**, for instance text, html, xml, json, etc.
+
 Inspired by `langchain-community`'s `S3FileLoader` and `S3DirectoryLoader`, `langchain_s3_text_loaders` provides loaders optimized for text e.g. plain text, html, xml, json, etc. 
 
 ## Install
