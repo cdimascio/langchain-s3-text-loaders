@@ -7,7 +7,7 @@ from typing import TYPE_CHECKING, List, Optional, Union
 from langchain_core.documents import Document
 
 from langchain_community.document_loaders.base import BaseLoader
-from langchain_s3_text_loaders import S3FileLoader
+from .s3_text_file_loader import S3TextFileLoader
 
 if TYPE_CHECKING:
     import botocore
@@ -148,7 +148,7 @@ class S3TextFileDirectoryLoader(BaseLoader):
     def _load_single_file(self, obj_key: str) -> List[Document]:
         """Load a single file synchronously."""
         print(f"loading {self.bucket}/{obj_key}")
-        loader = S3FileLoader(
+        loader = S3TextFileLoader(
             self.bucket,
             obj_key,
             region_name=self.region_name,

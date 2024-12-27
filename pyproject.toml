@@ -1,6 +1,6 @@
 [project]
 name = "langchain-s3-text-loaders"
-version = "0.8.0"
+version = "0.8.1"
 description = "s3 loaders for simple text files"
 authors = [
     { name = "Carmine DiMascio", email = "cdimascio@gmail.com" }
@@ -9,10 +9,10 @@ readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.11"
 dependencies = [
-    "botocore>=1.35.88", 
+    "botocore", 
     "langchain-core",
     "langchain-community",
-    "boto3>=1.35.88",
+    "boto3",
     ]
 
 [build-system]

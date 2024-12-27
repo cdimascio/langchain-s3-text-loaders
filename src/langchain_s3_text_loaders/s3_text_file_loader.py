@@ -1,8 +1,7 @@
-from langchain_core.documents import Document
 import boto3
 import botocore
+from langchain_core.documents import Document
 from typing import TYPE_CHECKING, Iterator, Optional, Union
-
 from langchain_community.document_loaders.base import BaseLoader
 
 if TYPE_CHECKING:
