@@ -1,0 +1,35 @@
+[project]
+name = "langchain-s3-text-loaders"
+version = "0.8.0"
+description = "s3 loaders for simple text files"
+authors = [
+    { name = "Carmine DiMascio", email = "cdimascio@gmail.com" }
+]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+dependencies = [
+    "botocore>=1.35.88", 
+    "langchain-core",
+    "langchain-community",
+    "boto3>=1.35.88",
+    ]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+
+[tool.pdm]
+distribution = true
+name = "langchain-s3-text-loaders"
+version = "0.8.0"
+description = "s3 loaders for simple text files"
+authors = ["Carmine DiMascio (cdimascio@gmail.com)"]
+readme = "README.md"
+license = "MIT"
+homepage = "https://github.com/cdimascio/langchain-s3-text-loaders"
+repository = "https://github.com/cdimascio/langchain-s3-text-loaders"
+
+packages = [{ include = "langchain_s3_text_loaders", from = "src" }]
+
