@@ -1,6 +1,6 @@
 [project]
 name = "langchain-s3-text-loaders"
-version = "0.8.2"
+version = "0.8.3"
 description = "s3 loaders for simple text files"
 authors = [
     { name = "Carmine DiMascio", email = "cdimascio@gmail.com" }
@@ -23,7 +23,7 @@ build-backend = "setuptools.build_meta"
 [tool.pdm]
 distribution = true
 name = "langchain-s3-text-loaders"
-version = "0.8.0"
+version = "0.8.3"
 description = "s3 loaders for simple text files"
 authors = ["Carmine DiMascio (cdimascio@gmail.com)"]
 readme = "README.md"
