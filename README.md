@@ -1,5 +1,7 @@
 # langchain-s3-text-loaders
 
+[![](https://img.shields.io/github/actions/workflow/status/cdimascio/langchain-s3-text-loaders/python-publish.yml)](https://github.com/cdimascio/langchain-s3-text-loaders/actions) [![](https://img.shields.io/pypi/dm/langchain-s3-text-loaders)](https://pypi.org/project/langchain-s3-text-loaders/) [![](https://img.shields.io/pypi/v/langchain-s3-text-loaders)](https://pypi.org/project/langchain-s3-text-loaders/)
+
 AWS S3 directory and file loaders for **text files**, for instance text, html, xml, json, etc.
 
 Inspired by `langchain-community`'s `S3FileLoader` and `S3DirectoryLoader`, `langchain_s3_text_loaders` provides loaders optimized for text e.g. plain text, html, xml, json, etc. 
